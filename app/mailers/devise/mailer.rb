@@ -1,5 +1,7 @@
 class Devise::Mailer < ::ActionMailer::Base
   include Devise::Mailers::Helpers
+  include Resque::Mailer
+  
 
   def confirmation_instructions(record)
     devise_mail(record, :confirmation_instructions)
